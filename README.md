@@ -1,4 +1,4 @@
-# Ejercios del postgrado de iOT UOC 2019
+# Desenvolupament IoT PQTM 19
 
 ## dogclass, helloworld 
 Python evaluation practices 
