@@ -41,8 +41,8 @@ void setup() {
 
 void loop() {
   sendMessage("Hola soy Arduino");
-  readMessagesFromServer();
   delay(10000);
+  readMessagesFromServer();
   checkClientConnection();
 }
 
