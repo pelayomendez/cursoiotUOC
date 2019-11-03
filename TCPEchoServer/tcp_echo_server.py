@@ -8,7 +8,7 @@ import socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Asignamos al socket una dirección y a un puerto para poder comunicarnos con el
-server_address = ('localhost', 10000)
+server_address = ('10.0.0.1', 10000)
 print("Servidor TCP Echo funcionando en: ", server_address[0] , ":", server_address[1])
 sock.bind(server_address)
 
@@ -25,11 +25,12 @@ try:
         while True:
             # Una vez creada la conexión recibimos los datos del cliente:
             data = client_socket.recv(1024)
-            print("Mensaje recibido: ", data)
+            stringdata = data.decode('utf-8')
+            print("Mensaje recibido: ", stringdata)
             if data:
                 # Volvemos a enviar al cliente los datos que nos ha enviado:
-                print("Mensaje enviado: ", data)
-                client_socket.sendall(data)
+                print("Mensaje enviado: ", stringdata)
+                client_socket.sendall(stringdata.encode('utf-8'))
             else:
                 # Volvemos al estado de espera:
                 print("No hay mas datos del cliente. ")
